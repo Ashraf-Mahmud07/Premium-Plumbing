@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 import { company } from "@/data/company";
+import { servicePageSlugs } from "@/data/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const routes = [
     "",
     "/plumbing-service-plans",
-    "/emergency-plumbing",
-    "/residential-plumbing/luxury-plumbing",
+    "/services/emergency-plumbing",
+    "/services/luxury-plumbing",
+    ...servicePageSlugs.map((slug) => `/services/${slug}`),
     "/about",
     "/gallery",
     "/contact",

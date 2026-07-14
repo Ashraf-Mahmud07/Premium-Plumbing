@@ -135,7 +135,7 @@ export const moreResidential = {
     {
       title: "24/7 Emergency Plumbing",
       desc: "Fast response when plumbing emergencies strike — serving homeowners across South Florida.",
-      href: "/emergency-plumbing",
+      href: "/services/emergency-plumbing",
     },
     { title: "Drain Issues", href: "/#services" },
     { title: "Fixture Repair & Installation", href: "/#services" },

@@ -27,7 +27,7 @@ import { breadcrumbSchema, emergencyServiceSchema, faqSchema } from "@/lib/schem
 export const metadata: Metadata = pageMetadata(
   "24/7 Emergency Plumbing Mesa | 60-Minute Response | OX Plumbing",
   "Emergency plumber at your door in 60 minutes. Real-person dispatch 24/7/365, fully stocked trucks that fix 95% of emergencies on the first visit. Call now.",
-  "/emergency-plumbing",
+  "/services/emergency-plumbing",
 );
 
 export default function EmergencyPlumbingPage() {
@@ -37,7 +37,7 @@ export default function EmergencyPlumbingPage() {
         data={[
           emergencyServiceSchema(),
           faqSchema(emergencyFaqs),
-          breadcrumbSchema("Emergency Plumbing", "/emergency-plumbing"),
+          breadcrumbSchema("Emergency Plumbing", "/services/emergency-plumbing"),
         ]}
       />
 

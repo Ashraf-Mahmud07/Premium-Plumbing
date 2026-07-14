@@ -26,7 +26,7 @@ import { breadcrumbTrailSchema, luxuryServiceSchema } from "@/lib/schema";
 export const metadata: Metadata = pageMetadata(
   "Luxury Plumbing Services in Davie, FL | High-End Fixtures & Faucets",
   "Elevate your space with luxury plumbing: premium fixtures and faucets from Duravit, Grohe, Toto, Kohler and more, plus smart leak detection for total peace of mind.",
-  "/residential-plumbing/luxury-plumbing",
+  "/services/luxury-plumbing",
 );
 
 const bodyP = "text-[15.5px] leading-[1.7] text-muted m-0";
@@ -39,7 +39,7 @@ export default function LuxuryPlumbingPage() {
           luxuryServiceSchema(),
           breadcrumbTrailSchema([
             { name: "Residential Plumbing", path: "/#services" },
-            { name: "Luxury Plumbing", path: "/residential-plumbing/luxury-plumbing" },
+            { name: "Luxury Plumbing", path: "/services/luxury-plumbing" },
           ]),
         ]}
       />

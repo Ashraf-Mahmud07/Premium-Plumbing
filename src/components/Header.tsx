@@ -12,7 +12,7 @@ import { ChevronDownIcon, PhoneIcon } from "./icons";
 
 const navLinks = [
   { label: "Service Plans", href: "/plumbing-service-plans" },
-  { label: "Emergency", href: "/emergency-plumbing" },
+  { label: "Emergency", href: "/services/emergency-plumbing" },
   { label: "About", href: "/about" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },

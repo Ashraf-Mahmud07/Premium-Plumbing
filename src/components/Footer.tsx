@@ -5,7 +5,7 @@ import { logo, logoSize } from "@/data/images";
 
 const quickLinks = [
   { label: "Service Plans", href: "/plumbing-service-plans" },
-  { label: "Emergency Plumbing", href: "/emergency-plumbing" },
+  { label: "Emergency Plumbing", href: "/services/emergency-plumbing" },
   { label: "About Our Team", href: "/about" },
   { label: "Project Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },

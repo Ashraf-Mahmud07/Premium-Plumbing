@@ -3,6 +3,21 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // SEO continuity: one canonical form per URL — no trailing slashes.
   trailingSlash: false,
+  async redirects() {
+    // Old paths permanently forwarded after the pages moved under /services.
+    return [
+      {
+        source: "/emergency-plumbing",
+        destination: "/services/emergency-plumbing",
+        permanent: true,
+      },
+      {
+        source: "/residential-plumbing/luxury-plumbing",
+        destination: "/services/luxury-plumbing",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       // Unsplash URLs are design-time placeholders — swap via src/data/images.ts.

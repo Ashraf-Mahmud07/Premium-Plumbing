@@ -20,12 +20,16 @@ npm run lint    # ESLint (clean)
 |---|---|
 | `/` | index.html |
 | `/plumbing-service-plans` | ServicePlans.html |
-| `/emergency-plumbing` | EmergencyPlumbing.html |
+| `/services/emergency-plumbing` | EmergencyPlumbing.html |
 | `/about` | About.html |
 | `/gallery` | Gallery.dc.html |
 | `/contact` | Contact.html |
 
-Trailing slashes are disabled (`next.config.ts`) so every URL resolves one way.
+All service pages (including the bespoke `/services/emergency-plumbing` and
+`/services/luxury-plumbing`) live under `/services/`. The old paths
+`/emergency-plumbing` and `/residential-plumbing/luxury-plumbing` permanently
+redirect there (`next.config.ts`). Trailing slashes are disabled so every URL
+resolves one way.
 
 ## How to swap in real photos
 
@@ -105,6 +109,20 @@ drives canonicals, OG URLs, the sitemap, and robots.txt.
   only `priority` image per page; fonts load via `next/font` with `display: swap`;
   animations (pulse-ring, blink, hover lifts) are disabled under
   `prefers-reduced-motion`.
+
+## Service pages (`/services/<slug>`)
+
+All 19 residential and commercial service pages are generated from a single
+template ([`src/components/ServicePage.tsx`](src/components/ServicePage.tsx))
+and a typed content registry ([`src/data/service-pages/`](src/data/service-pages/)):
+`residential.ts` (10 pages) and `commercial.ts` (9 pages). Each entry contains
+hero, overview, why-choose-us, benefits, common problems, process, why-it-matters,
+experience, features, FAQs, related services, and CTA copy — edit content there,
+never in components. Adding an entry to the registry publishes a new page,
+statically generated with metadata, Service + FAQPage + BreadcrumbList JSON-LD,
+and a sitemap entry, automatically. Content substance was adapted from the
+reference site (joecoleplumbing.com) and rewritten for the OX brand and the
+Mesa / East Valley service area.
 
 ## Architecture notes
 
