@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ============ OX Plumbing design tokens (extracted from the design files) ============ */
+@theme {
+  --color-ink: #0b0d10;
+  --color-surface-dark: #14171c;
+  --color-paper: #f7f6f3;
+  --color-card: #ffffff;
+  --color-line: #e9e6e0;
+  --color-body: #1a1d21;
+  --color-body-strong: #33383f;
+  --color-muted: #5a6068;
+  --color-dim: #8a9099;
+  --color-dark-body: #a8aeb8;
+  --color-dark-heading: #f2f0ec;
+  --color-dark-nav: #e8e6e1;
+  --color-accent: #f5891f;
+  --color-accent-hover: #ffa03a;
+  --color-accent-deep: #c96a0a;
+  --color-accent-soft: #f5a94f;
+  --color-accent-strong: #e07100;
+  --color-accent-ink: #17110a;
+  --color-success: #4ade80;
+  --color-star: #fbbf24;
+  --color-input-border: #ddd9d1;
+  --color-input-bg: #fbfaf8;
+  --color-ghost-number: #efd9be;
+  --color-hairline: #d8d4cc;
+  --color-btn-neutral: #f1eee8;
+
+  --font-display: var(--font-archivo), sans-serif;
+  --font-sans: var(--font-instrument-sans), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 137, 31, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(245, 137, 31, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 137, 31, 0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2.4s infinite;
+}
+
+.animate-float-in {
+  animation: floatIn 0.18s ease-out;
+}
+
+.animate-blink {
+  animation: blink 1.2s infinite;
+}
+
+/* Subtle animations only — all gated behind prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-pulse-ring,
+  .animate-float-in,
+  .animate-blink {
+    animation: none;
+  }
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+  }
+}
